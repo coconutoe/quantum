@@ -1,0 +1,9 @@
+Quantum a 10;
+
+X a[9];H a[9];
+H a[0];H a[1];H a[2];H a[3];H a[4];H a[5];H a[6];H a[7];H a[8];
+
+
+CNOT a[0] a[9];CNOT a[2] a[9];
+
+H a[0];H a[1];H a[2];H a[3];H a[4];H a[5];H a[6];H a[7];H a[8]

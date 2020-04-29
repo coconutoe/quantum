@@ -1,0 +1,9 @@
+Quantum a 11;
+
+X a[10];H a[10];
+H a[0];H a[1];H a[2];H a[3];H a[4];H a[5];H a[6];H a[7];H a[8];H a[9];
+
+
+CNOTS a[0] a[1] a[2] a[3] a[4] a[5] a[6] a[7] a[8] a[9] a[10];
+
+H a[0];H a[1];H a[2];H a[3];H a[4];H a[5];H a[6];H a[7];H a[8];H a[9]

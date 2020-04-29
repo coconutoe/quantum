@@ -1,0 +1,118 @@
+Quantum a 9;
+
+X a[8];
+H a[8];
+
+H a[0];H a[1];H a[2];H a[3];H a[4];H a[5];H a[6];H a[7];
+
+CNOTS a[0] a[1] a[2] a[3] a[4] a[5] a[6] a[7] a[8];
+H a[0];H a[1];H a[2];H a[3];H a[4];H a[5];H a[6];H a[7];
+X a[0];X a[1];X a[2];X a[3];X a[4];X a[5];X a[6];X a[7];
+H a[7];
+CNOTS a[0] a[1] a[2] a[3] a[4] a[5] a[6] a[7];
+H a[7];
+X a[0];X a[1];X a[2];X a[3];X a[4];X a[5];X a[6];X a[7];
+H a[0];H a[1];H a[2];H a[3];H a[4];H a[5];H a[6];H a[7];
+
+CNOTS a[0] a[1] a[2] a[3] a[4] a[5] a[6] a[7] a[8];
+H a[0];H a[1];H a[2];H a[3];H a[4];H a[5];H a[6];H a[7];
+X a[0];X a[1];X a[2];X a[3];X a[4];X a[5];X a[6];X a[7];
+H a[7];
+CNOTS a[0] a[1] a[2] a[3] a[4] a[5] a[6] a[7];
+H a[7];
+X a[0];X a[1];X a[2];X a[3];X a[4];X a[5];X a[6];X a[7];
+H a[0];H a[1];H a[2];H a[3];H a[4];H a[5];H a[6];H a[7];
+
+CNOTS a[0] a[1] a[2] a[3] a[4] a[5] a[6] a[7] a[8];
+H a[0];H a[1];H a[2];H a[3];H a[4];H a[5];H a[6];H a[7];
+X a[0];X a[1];X a[2];X a[3];X a[4];X a[5];X a[6];X a[7];
+H a[7];
+CNOTS a[0] a[1] a[2] a[3] a[4] a[5] a[6] a[7];
+H a[7];
+X a[0];X a[1];X a[2];X a[3];X a[4];X a[5];X a[6];X a[7];
+H a[0];H a[1];H a[2];H a[3];H a[4];H a[5];H a[6];H a[7];
+
+CNOTS a[0] a[1] a[2] a[3] a[4] a[5] a[6] a[7] a[8];
+H a[0];H a[1];H a[2];H a[3];H a[4];H a[5];H a[6];H a[7];
+X a[0];X a[1];X a[2];X a[3];X a[4];X a[5];X a[6];X a[7];
+H a[7];
+CNOTS a[0] a[1] a[2] a[3] a[4] a[5] a[6] a[7];
+H a[7];
+X a[0];X a[1];X a[2];X a[3];X a[4];X a[5];X a[6];X a[7];
+H a[0];H a[1];H a[2];H a[3];H a[4];H a[5];H a[6];H a[7];
+
+CNOTS a[0] a[1] a[2] a[3] a[4] a[5] a[6] a[7] a[8];
+H a[0];H a[1];H a[2];H a[3];H a[4];H a[5];H a[6];H a[7];
+X a[0];X a[1];X a[2];X a[3];X a[4];X a[5];X a[6];X a[7];
+H a[7];
+CNOTS a[0] a[1] a[2] a[3] a[4] a[5] a[6] a[7];
+H a[7];
+X a[0];X a[1];X a[2];X a[3];X a[4];X a[5];X a[6];X a[7];
+H a[0];H a[1];H a[2];H a[3];H a[4];H a[5];H a[6];H a[7];
+
+CNOTS a[0] a[1] a[2] a[3] a[4] a[5] a[6] a[7] a[8];
+H a[0];H a[1];H a[2];H a[3];H a[4];H a[5];H a[6];H a[7];
+X a[0];X a[1];X a[2];X a[3];X a[4];X a[5];X a[6];X a[7];
+H a[7];
+CNOTS a[0] a[1] a[2] a[3] a[4] a[5] a[6] a[7];
+H a[7];
+X a[0];X a[1];X a[2];X a[3];X a[4];X a[5];X a[6];X a[7];
+H a[0];H a[1];H a[2];H a[3];H a[4];H a[5];H a[6];H a[7];
+
+CNOTS a[0] a[1] a[2] a[3] a[4] a[5] a[6] a[7] a[8];
+H a[0];H a[1];H a[2];H a[3];H a[4];H a[5];H a[6];H a[7];
+X a[0];X a[1];X a[2];X a[3];X a[4];X a[5];X a[6];X a[7];
+H a[7];
+CNOTS a[0] a[1] a[2] a[3] a[4] a[5] a[6] a[7];
+H a[7];
+X a[0];X a[1];X a[2];X a[3];X a[4];X a[5];X a[6];X a[7];
+H a[0];H a[1];H a[2];H a[3];H a[4];H a[5];H a[6];H a[7];
+
+CNOTS a[0] a[1] a[2] a[3] a[4] a[5] a[6] a[7] a[8];
+H a[0];H a[1];H a[2];H a[3];H a[4];H a[5];H a[6];H a[7];
+X a[0];X a[1];X a[2];X a[3];X a[4];X a[5];X a[6];X a[7];
+H a[7];
+CNOTS a[0] a[1] a[2] a[3] a[4] a[5] a[6] a[7];
+H a[7];
+X a[0];X a[1];X a[2];X a[3];X a[4];X a[5];X a[6];X a[7];
+H a[0];H a[1];H a[2];H a[3];H a[4];H a[5];H a[6];H a[7];
+
+CNOTS a[0] a[1] a[2] a[3] a[4] a[5] a[6] a[7] a[8];
+H a[0];H a[1];H a[2];H a[3];H a[4];H a[5];H a[6];H a[7];
+X a[0];X a[1];X a[2];X a[3];X a[4];X a[5];X a[6];X a[7];
+H a[7];
+CNOTS a[0] a[1] a[2] a[3] a[4] a[5] a[6] a[7];
+H a[7];
+X a[0];X a[1];X a[2];X a[3];X a[4];X a[5];X a[6];X a[7];
+H a[0];H a[1];H a[2];H a[3];H a[4];H a[5];H a[6];H a[7];
+
+CNOTS a[0] a[1] a[2] a[3] a[4] a[5] a[6] a[7] a[8];
+H a[0];H a[1];H a[2];H a[3];H a[4];H a[5];H a[6];H a[7];
+X a[0];X a[1];X a[2];X a[3];X a[4];X a[5];X a[6];X a[7];
+H a[7];
+CNOTS a[0] a[1] a[2] a[3] a[4] a[5] a[6] a[7];
+H a[7];
+X a[0];X a[1];X a[2];X a[3];X a[4];X a[5];X a[6];X a[7];
+H a[0];H a[1];H a[2];H a[3];H a[4];H a[5];H a[6];H a[7];
+
+CNOTS a[0] a[1] a[2] a[3] a[4] a[5] a[6] a[7] a[8];
+H a[0];H a[1];H a[2];H a[3];H a[4];H a[5];H a[6];H a[7];
+X a[0];X a[1];X a[2];X a[3];X a[4];X a[5];X a[6];X a[7];
+H a[7];
+CNOTS a[0] a[1] a[2] a[3] a[4] a[5] a[6] a[7];
+H a[7];
+X a[0];X a[1];X a[2];X a[3];X a[4];X a[5];X a[6];X a[7];
+H a[0];H a[1];H a[2];H a[3];H a[4];H a[5];H a[6];H a[7];
+
+CNOTS a[0] a[1] a[2] a[3] a[4] a[5] a[6] a[7] a[8];
+H a[0];H a[1];H a[2];H a[3];H a[4];H a[5];H a[6];H a[7];
+X a[0];X a[1];X a[2];X a[3];X a[4];X a[5];X a[6];X a[7];
+H a[7];
+CNOTS a[0] a[1] a[2] a[3] a[4] a[5] a[6] a[7];
+H a[7];
+X a[0];X a[1];X a[2];X a[3];X a[4];X a[5];X a[6];X a[7];
+H a[0];H a[1];H a[2];H a[3];H a[4];H a[5];H a[6];H a[7]
+
+
+
+
