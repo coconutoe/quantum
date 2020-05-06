@@ -1,0 +1,6 @@
+Quantum a 2;
+H a[0];
+
+CNOT a[0] a[1];
+
+Z a[0]
