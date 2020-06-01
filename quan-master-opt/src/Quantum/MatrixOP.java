@@ -1,9 +1,15 @@
 package Quantum;
 
 import java.util.Arrays;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 import org.jscience.mathematics.number.Complex;
 import org.jscience.mathematics.vector.ComplexMatrix;
 import org.jscience.mathematics.vector.ComplexVector;
+
+import com.aparapi.Kernel;
+import com.aparapi.Range;
 
 public class MatrixOP {
 	
@@ -13,7 +19,23 @@ public class MatrixOP {
 		
 		for(int i = 0; i < IlDimension; i++) {
 			Complex[] temp = intercept(qsArr, i * (IrDimension * uGateDimension), (i + 1) * (IrDimension * uGateDimension));
+			
+			//ThreadUTensorI(IrDimension, uGateArr, temp);
 			UTensorI(IrDimension, uGateArr, temp);
+			
+			copyTo(temp, qsArr, 0, i * (IrDimension * uGateDimension));
+		}
+		
+	}
+	
+	//I tensor U tensor I
+	public static void ITensorUTensorIGpu(int IlDimension, int IrDimension, Complex[][] uGateArr, Complex[] qsArr) {
+		int uGateDimension = uGateArr[0].length;
+		
+		for(int i = 0; i < IlDimension; i++) {
+			Complex[] temp = intercept(qsArr, i * (IrDimension * uGateDimension), (i + 1) * (IrDimension * uGateDimension));
+			
+			UTensorIGpu(IrDimension, uGateArr, temp);
 			copyTo(temp, qsArr, 0, i * (IrDimension * uGateDimension));
 		}
 		
@@ -79,6 +101,64 @@ public class MatrixOP {
 		
 	}
 	
+	public static void UTensorIGpu(int IDimension, Complex[][] uGateArr, Complex[] qsArr) {
+		Complex[] tempArr = copyComplexArr(qsArr);
+		int uGateArrDimension = uGateArr[0].length;
+		
+		Kernel kernel = new Kernel() {
+			@Override
+			public void run() {
+				int globalId = getGlobalId();
+				System.out.println(globalId);
+				
+				int i = globalId / IDimension;
+				int j = globalId % IDimension;
+				
+				Complex val = Complex.ZERO;
+				for(int k = 0; k < uGateArrDimension; k++) {
+					val = val.plus(uGateArr[i][k].times(tempArr[j + k * IDimension]));
+				}
+				qsArr[i * IDimension + j] = val;
+			}
+		};
+		
+		// Array size for GPU to know
+		Range range = Range.create(uGateArrDimension * IDimension);
+		kernel.execute(range);
+	}
+	
+	//多线程,CPU多线程貌似不可行
+	public static void ThreadUTensorI(int IDimension, Complex[][] uGateArr, Complex[] qsArr) {
+		Complex[] tempArr = copyComplexArr(qsArr);
+		
+		//Thread th1 = new LinearAlgebraCalThread(0, IDimension/4, uGateArr, qsArr, tempArr, IDimension);
+		//Thread th2 = new LinearAlgebraCalThread(IDimension/4, IDimension/2, uGateArr, qsArr, tempArr, IDimension);
+		//Thread th3 = new LinearAlgebraCalThread(IDimension/2, (IDimension/4)*3, uGateArr, qsArr, tempArr, IDimension);
+		//Thread th4 = new LinearAlgebraCalThread((IDimension/4)*3, IDimension, uGateArr, qsArr, tempArr, IDimension);
+		int uGateArrDimension = uGateArr[0].length;
+		
+		ExecutorService executorService = Executors.newFixedThreadPool(4); 
+		
+//		executorService.execute(th1);
+//		executorService.execute(th2);
+//		executorService.execute(th3);
+//		executorService.execute(th4);
+		
+		for (int i = 0; i < uGateArrDimension; i++) {
+			Thread th = new LinearAlgebraCalThread(uGateArr, qsArr, tempArr, IDimension, i);
+			executorService.execute(th);
+		}
+		 
+		executorService.shutdown();
+		
+		while (true) { 
+			if(executorService.isTerminated()){
+				break;
+			}
+		}
+		
+	}
+	
 	//复制一个一维Complex数组
 	public static Complex[] copyComplexArr(Complex[] complexArr) {
 		Complex[] tempArr = new Complex[complexArr.length];
@@ -117,5 +197,54 @@ public class MatrixOP {
 		}
 				
 		return complexArr;
+	}
+	
+	private static class LinearAlgebraCalThread extends Thread {
+		//private int start;
+		//private int end;
+		private int i;
+		private int IDimension;
+		private int uGateArrDimension;
+		private Complex[][] uGateArr;
+		private Complex[] qsArr;
+		private Complex[] tempArr;
+		
+		public LinearAlgebraCalThread(Complex[][] uGateArr, Complex[] qsArr, Complex[] tempArr, int IDimension,  int i) {
+			this.i = i;
+			this.uGateArr = uGateArr;
+			this.qsArr = qsArr;
+			this.tempArr = tempArr;
+			
+			uGateArrDimension = uGateArr[0].length;
+			this.IDimension = IDimension;
+		}
+
+//		@Override
+//		public void run() {
+//			for(int i = 0; i < uGateArrDimension; i++) {
+//				for(int j = start; j < end; j++) {
+//					Complex val = Complex.ZERO;
+//					for(int k = 0; k < uGateArrDimension; k++) {
+//						val = val.plus(uGateArr[i][k].times(tempArr[j + k * IDimension]));
+//					}
+//					qsArr[i * IDimension + j] = val;
+//				}
+//			}
+//		}
+		
+		@Override
+		public void run() {
+			
+			for(int j = 0; j < IDimension; j++) {
+				System.out.println(i);
+				Complex val = Complex.ZERO;
+				for(int k = 0; k < uGateArrDimension; k++) {
+					val = val.plus(uGateArr[i][k].times(tempArr[j + k * IDimension]));
+				}
+				qsArr[i * IDimension + j] = val;
+			}
+			
+			
+		}
 	}
 }

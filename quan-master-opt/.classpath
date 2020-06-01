@@ -3,5 +3,7 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="G:/paper/datas/quan-master-opt/QSimulation_jar/jscience-4.3.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="G:/paper/datas/quan-master-opt/QSimulation_jar/aparapi.jar" sourcepath="D:/java/com.zip"/>
+	<classpathentry kind="lib" path="G:/paper/datas/quan-master-opt/QSimulation_jar/bcel-6.4.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
