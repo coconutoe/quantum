@@ -1,0 +1,85 @@
+####################################################################################################
+## This document mainly shows the comparative experimental datas of Qsimulation, ProjectQ and Qiskit. The document also shows the 
+## code of Qsimulation in each experiment. In addition, the experimental code of ProjectQ and Qiskit is shown in softwaresPK_ PQ.py 
+## And softwaresPK_ QT.py.
+####################################################################################################
+1, @18H :
+Quantum a 18;
+H a[0];
+CNOT a[0] a[1];CNOT a[0] a[2];CNOT a[0] a[3];CNOT a[0] a[4];CNOT a[0] a[5];CNOT a[0] a[6];CNOT a[0] a[7];CNOT a[0] a[8];CNOT a[0] a[9];
+CNOT a[0] a[10];CNOT a[0] a[11];CNOT a[0] a[12];CNOT a[0] a[13];CNOT a[0] a[14];CNOT a[0] a[15];CNOT a[0] a[16];CNOT a[0] a[17];
+H a[0];H a[1];H a[2];H a[3];H a[4];H a[5];H a[6];H a[7];H a[8];H a[9];H a[10];H a[11];H a[12];H a[13];H a[14];H a[15];H a[16];H a[17]
+Qsimulation (ms):   1227     1031     1010      992       664       997       671       984       686       979       670            avg(4-11):  830
+ProjectQ      (ms):    21961   21741   21889   20247   18668   22479   21635   21098   21648   22507   21298        avg(4-11):  21198
+qiskit           (ms):    2275     2270     2287     2256      2272    2232     2221     2255      2151    2215     2227           avg(4-11):  2229
+
+2, @18X :
+Quantum a 18;
+H a[0];
+CNOT a[0] a[1];CNOT a[0] a[2];CNOT a[0] a[3];CNOT a[0] a[4];CNOT a[0] a[5];CNOT a[0] a[6];CNOT a[0] a[7];CNOT a[0] a[8];CNOT a[0] a[9];
+CNOT a[0] a[10];CNOT a[0] a[11];CNOT a[0] a[12];CNOT a[0] a[13];CNOT a[0] a[14];CNOT a[0] a[15];CNOT a[0] a[16];CNOT a[0] a[17];
+X a[0];X a[1];X a[2];X a[3];X a[4];X a[5];X a[6];X a[7];X a[8];X a[9];X a[10];X a[11];X a[12];X a[13];X a[14];X a[15];X a[16];X a[17]
+Qsimulation (ms):   1186     1011     1005     1031     680       986       676       671       854       670       690            avg(4-11):  782
+ProjectQ      (ms):   27889   16697   28019   16679   16781   27529   16672   27285   27196   16279   16100        avg(4-11):  20565
+qiskit           (ms):    2226     2309    2221      2202     2238    2224      2224    2228      2213     2210     2229          avg(4-11):  2221
+
+3, @18Y :
+Quantum a 18;
+H a[0];
+CNOT a[0] a[1];CNOT a[0] a[2];CNOT a[0] a[3];CNOT a[0] a[4];CNOT a[0] a[5];CNOT a[0] a[6];CNOT a[0] a[7];CNOT a[0] a[8];CNOT a[0] a[9];
+CNOT a[0] a[10];CNOT a[0] a[11];CNOT a[0] a[12];CNOT a[0] a[13];CNOT a[0] a[14];CNOT a[0] a[15];CNOT a[0] a[16];CNOT a[0] a[17];
+Y a[0];Y a[1];Y a[2];Y a[3];Y a[4];Y a[5];Y a[6];Y a[7];Y a[8];Y a[9];Y a[10];Y a[11];Y a[12];Y a[13];Y a[14];Y a[15];Y a[16];Y a[17]
+Qsimulation (ms):   1275     1068     698       998       664       987       667       978       659       648       988            avg(4-11):  824
+ProjectQ      (ms):   26455   26646   26606   15805   15590   15526   26532   26492   15622   15585   26645        avg(4-11):  19725
+qiskit           (ms):   2249     2207     2185      2196     2210     2201    2169     2203      2199     2210    2197           avg(4-11):  2198
+
+4, @18Z :
+Quantum a 18;
+H a[0];
+CNOT a[0] a[1];CNOT a[0] a[2];CNOT a[0] a[3];CNOT a[0] a[4];CNOT a[0] a[5];CNOT a[0] a[6];CNOT a[0] a[7];CNOT a[0] a[8];CNOT a[0] a[9];
+CNOT a[0] a[10];CNOT a[0] a[11];CNOT a[0] a[12];CNOT a[0] a[13];CNOT a[0] a[14];CNOT a[0] a[15];CNOT a[0] a[16];CNOT a[0] a[17];
+Z a[0];Z a[1];Z a[2];Z a[3];Z a[4];Z a[5];Z a[6];Z a[7];Z a[8];Z a[9];Z a[10];Z a[11];Z a[12];Z a[13];Z a[14];Z a[15];Z a[16];Z a[17]
+Qsimulation (ms):   1273     1072     725      1002      667       981       675       674       963       668       693            avg(4-11):  790
+ProjectQ      (ms):   28952   14816   29012   29378   29169   28884   14838   29234   28786   29148   28847        avg(4-11):  27286
+qiskit           (ms):    2295     2270    2247     2247     2262      2209     2201     2196     2226     2203     2188          avg(4-11):  2217
+
+5, @9H_9X :
+Quantum a 18;
+H a[0];
+CNOT a[0] a[1];CNOT a[0] a[2];CNOT a[0] a[3];CNOT a[0] a[4];CNOT a[0] a[5];CNOT a[0] a[6];CNOT a[0] a[7];CNOT a[0] a[8];CNOT a[0] a[9];
+CNOT a[0] a[10];CNOT a[0] a[11];CNOT a[0] a[12];CNOT a[0] a[13];CNOT a[0] a[14];CNOT a[0] a[15];CNOT a[0] a[16];CNOT a[0] a[17];
+H a[0];H a[1];H a[2];H a[3];H a[4];H a[5];H a[6];H a[7];H a[8];X a[9];X a[10];X a[11];X a[12];X a[13];X a[14];X a[15];X a[16];X a[17]
+Qsimulation (ms):   1274     1104     675       989       674       976       677       661       980       665       666            avg(4-11):  786
+ProjectQ      (ms):   18600   24650   23865   18256   24763   23877   19111   18884   24377   18277   20584        avg(4-11):  21016
+qiskit           (ms):    2329     2246    2211      2288    2297     2287      2299     2308     2342     2284     2279          avg(4-11):  2298
+
+6, @9H_9Y :
+Quantum a 18;
+H a[0];
+CNOT a[0] a[1];CNOT a[0] a[2];CNOT a[0] a[3];CNOT a[0] a[4];CNOT a[0] a[5];CNOT a[0] a[6];CNOT a[0] a[7];CNOT a[0] a[8];CNOT a[0] a[9];
+CNOT a[0] a[10];CNOT a[0] a[11];CNOT a[0] a[12];CNOT a[0] a[13];CNOT a[0] a[14];CNOT a[0] a[15];CNOT a[0] a[16];CNOT a[0] a[17];
+H a[0];H a[1];H a[2];H a[3];H a[4];H a[5];H a[6];H a[7];H a[8];Y a[9];Y a[10];Y a[11];Y a[12];Y a[13];Y a[14];Y a[15];Y a[16];Y a[17]
+Qsimulation (ms):   1279    1061      699      1046      682       992       679       888       678       671      1016           avg(4-11):  831
+ProjectQ      (ms):   22725   23603   19055   25818   22022   22140   22503   24413   19594   19678   20993        avg(4-11):  22145
+qiskit           (ms):   2305     2173      2191    2207     2195      2194     2175     2180     2204     2179    2211           avg(4-11):  2193
+
+7, @9H_9Z :
+Quantum a 18;
+H a[0];
+CNOT a[0] a[1];CNOT a[0] a[2];CNOT a[0] a[3];CNOT a[0] a[4];CNOT a[0] a[5];CNOT a[0] a[6];CNOT a[0] a[7];CNOT a[0] a[8];CNOT a[0] a[9];
+CNOT a[0] a[10];CNOT a[0] a[11];CNOT a[0] a[12];CNOT a[0] a[13];CNOT a[0] a[14];CNOT a[0] a[15];CNOT a[0] a[16];CNOT a[0] a[17];
+H a[0];H a[1];H a[2];H a[3];H a[4];H a[5];H a[6];H a[7];H a[8];Z a[9];Z a[10];Z a[11];Z a[12];Z a[13];Z a[14];Z a[15];Z a[16];Z a[17]
+Qsimulation (ms):   1260    1089      666       993       673       982       662       930       683       676       899            avg(4-11):  812
+ProjectQ      (ms):   24622   25261   23797   18942   26083   25854   18145   19958   24332   23698   17411        avg(4-11):  21803
+qiskit           (ms):    2330    2237      2198     2163    2170     2228      2193     2238     2225     2199     2190          avg(4-11):  2201
+
+
+8, @6X_6Y_6Z :
+Quantum a 18;
+H a[0];
+CNOT a[0] a[1];CNOT a[0] a[2];CNOT a[0] a[3];CNOT a[0] a[4];CNOT a[0] a[5];CNOT a[0] a[6];CNOT a[0] a[7];CNOT a[0] a[8];CNOT a[0] a[9];
+CNOT a[0] a[10];CNOT a[0] a[11];CNOT a[0] a[12];CNOT a[0] a[13];CNOT a[0] a[14];CNOT a[0] a[15];CNOT a[0] a[16];CNOT a[0] a[17];
+X a[0];X a[1];X a[2];X a[3];X a[4];X a[5];Y a[6];Y a[7];Y a[8];Y a[9];Y a[10];Y a[11];Z a[12];Z a[13];Z a[14];Z a[15];Z a[16];Z a[17]
+Qsimulation (ms):   1259     1087     722       1042     682       1021     694       924       669       662       893            avg(4-11):  823
+ProjectQ      (ms):   14673   14526   28629   15387   28593   14534   14680   28927   14557   14585   14498        avg(4-11):  18220
+qiskit           (ms):    2206     2219    2275      2300     2257     2254     2270     2220     2245     2244     2243          avg(4-11):  2254
