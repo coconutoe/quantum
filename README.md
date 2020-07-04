@@ -1,2 +1,1 @@
-# quantum
-Qsimulation的优化版本
+# Qsimulation V2.0: an Optimized Quantum Simulator
