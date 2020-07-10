@@ -1,0 +1,26 @@
+#############################################################################################
+## The experiment results in this document are all obtained by transforming the state vector into a quantum state finally.
+#############################################################################################
+Deutsch_Jozsa（quantum 11）：
+opt-before (ms):   9613   9180   7823   10114  7734   8709   7969   8168   8234   7963   7322       avg(4-11) :   8277	
+opt-after    (ms):   338     200	   165      155     162     135 	134     133     131     143     114         avg(4-11) :   138
+
+Simon（quantum 10）：
+opt-before (ms):   9613   9180   7823   10114  7734   8709   7969   8168   8234   7963   7322       avg(4-11) :   8277	
+opt-after    (ms):   338     200	   165      155     162     135 	134     133     131     143     114         avg(4-11) :   138
+
+Bernstein_Vazirani（quantum 10）：
+opt-before (ms):   1794   1230   1187   1176   1151   1133   1158   1165   1134   1136   1127        avg(4-11) :   1148
+opt-after    (ms):   125     16       11       13        9         9         8         11       7         7         7             avg(4-11) :    9
+
+Superdense Coding（quantum 2）：
+opt-before (ms):   98        2        2          2          1         1         2         1         1          1         1           avg(4-11) :   1.25
+opt-after    (ms):   136      2        1          1          1         1         1         1         1          2         1           avg(4-11) :   1.125
+
+Teleportation（quantum 3）：
+opt-before (ms):   238     4         4          4          4        4          4        3         3          3         3            avg(4-11) :   3.5
+opt-after    (ms):   138     1         2          1          2         2         2         1         2          1         2           avg(4-11) :   1.625
+
+Grover（quantum 9）：		              	              
+opt-before (ms):   6722   6016   5950   6119   5932   5910   6028   5991   5923   5910   6011        avg(4-11) :   5978
+opt-after    (ms):   515     301      272     252     239    169     180     138     139     136     125          avg(4-11) :   172

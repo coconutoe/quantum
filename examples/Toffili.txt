@@ -1,0 +1,19 @@
+Quantum a 6;
+X a[0];
+X a[1];
+H a[2];
+CNOT a[1] a[2];
+TDG a[2];
+CNOT a[0] a[2];
+T a[2];
+CNOT a[1] a[2];
+TDG a[2];
+CNOT a[0] a[2];
+TDG a[1];
+T a[2];
+H a[2];
+CNOT a[0] a[1];
+TDG a[1];
+CNOT a[0] a[1];
+T a[0];
+S a[1]
