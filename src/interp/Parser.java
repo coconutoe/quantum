@@ -56,9 +56,6 @@ public class Parser {
         ASTLeaf identity;
         //几个量子比特
         ASTLeaf count;
-        //参数列表
-        List<ASTLeaf> params = new ArrayList<>();
-
 
         //匹配Quantum
         match(TokenType.Quantum);
@@ -344,13 +341,11 @@ public class Parser {
 
         match(TokenType.LParenthesis);
         //用来记录参数的个数
-        int i = 0;
         //如果不是右括号，则遍历
         while (!(lookahead.tokenType.equals(TokenType.RParenthesis))) {
             //参数
             exp = exp();
             list.add(exp);
-            i++;
         }
         //匹配右括号
         match(TokenType.RParenthesis);

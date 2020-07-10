@@ -3,7 +3,6 @@ package operater;
 import java.util.List;
 
 import org.jscience.mathematics.number.Complex;
-import org.jscience.mathematics.vector.ComplexMatrix;
 
 import Quantum.Qubit;
 import util.BinaryToTen;

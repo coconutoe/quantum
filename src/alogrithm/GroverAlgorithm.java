@@ -59,7 +59,6 @@ public class GroverAlgorithm
 	public void initializeBinary()
 	{
 		Integer i = 0;
-		double amplitude = 1 / Math.sqrt(Math.pow(2, numQubits));
 		//System.out.print(amplitude);
 		//System.out.print("(");
 		for (i = 0; i < Math.pow(2, numQubits) - 1; i++)
@@ -81,7 +80,6 @@ public class GroverAlgorithm
 	public void initialize()
 	{
 		int i = 0;
-		double amplitude = 1 / Math.sqrt(Math.pow(2, numQubits));
 		//System.out.print(amplitude);
 		//System.out.print("(");
 		for (i = 0; i < Math.pow(2, numQubits) - 1; i++)

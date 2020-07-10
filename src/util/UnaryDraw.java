@@ -35,25 +35,7 @@ public class UnaryDraw implements Size{
         t1.setTextAlignment(TextAlignment.CENTER);
         g.getChildren().addAll(r, t1);
         circuitpane.getChildren().add(g);
-
         
-//        outcomepane.getChildren().clear();
-//        if(num == 1){
-//            //Text outcome = new Text(10,20,"current state : "+ AmpToBra.translate(q.getPossibles()));
-//            //Text outcome = new Text(10,20,"current state : "+ AmpToBra.translateOpt(q));
-//        	
-//            
-//            Text outcome = new Text(10,20,"current state : " + q);
-//            
-//        	outcomepane.getChildren().add(outcome);
-//        }
-//        if(num == 2){
-//            Text outcome = new Text(10,20,"current state : "+ q.matrix());
-//            outcomepane.getChildren().add(outcome);
-//        }
-        
-
-
         env.put("changeDx",changeNum+1);
         return null;
     }

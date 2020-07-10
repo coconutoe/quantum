@@ -12,7 +12,6 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.scene.text.Text;
-import operater.BinaryGateOperator;
 import operater.CcnotGateOperator;
 import util.AmpToBra;
 import util.FindSource;

@@ -14,7 +14,6 @@ public class UnaryGateOperater {
     public static void excute(ComplexMatrix matrix, Qubit qs, int loc) {
     	//optBefore(matrix, qs, loc);
     	optAfter(matrix, qs, loc);
-    	//GpuOpt(matrix, qs, loc);
     }
     
     public static void optBefore(ComplexMatrix matrix, Qubit qs, int loc) {
@@ -34,10 +33,7 @@ public class UnaryGateOperater {
             tensorMatrix = identyMatrix.tensor(tensorMatrix);
             i++;
         }
-//        //如果没有左边张量
-//        if(tensorMatrix == null){
-//            tensorMatrix = matrix;
-//        }
+        
         while (i < number-1) {
             tensorMatrix = tensorMatrix.tensor(identyMatrix);
             i++;
@@ -72,22 +68,4 @@ public class UnaryGateOperater {
         qs.setPossibles(qsArr);
     }
     
-    public static void GpuOpt(ComplexMatrix matrix, Qubit qs, int loc) {
-    	//Qbtis-->向量
-        ComplexVector complexVector = qs.qsToVector();
-        
-        // 量子比特数
-        int quantumBits = qs.number();
-
-        int IlDimension = (int) Math.pow(2, loc);
-        int IrDimension = (int) Math.pow(2, quantumBits - 1 - loc);
-        
-        Complex[][] uGateArr = MatrixOperation.complexMatrixToComplexArr(matrix);
-        Complex[] qsArr = MatrixOperation.complexVectorToComplexArr(complexVector);
-        
-        MatrixOperation matrixOperation = new MatrixOperation(IlDimension, IrDimension, uGateArr, qsArr);
-        matrixOperation.ITensorUTensorIGpu();
-        
-        qs.setPossibles(qsArr);
-    }
 }

@@ -73,7 +73,6 @@ public class List_UOP extends ASTList {
 
 	public Object eval(Environment env, Pane circuitpane, Pane outcomepane, int num){
 		eval(env);
-		Qubit q = (Qubit)env.get("QuantumRegisterDX");
 		//获取操作位置
 		int location = FindSource.findSource(env,argument().toString());
 

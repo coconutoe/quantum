@@ -10,9 +10,6 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import org.jscience.mathematics.number.Complex;
 import util.AmpToBra;
-import util.DensityMatrix;
-import util.DrawBloch;
-import util.QToBloch;
 
 import java.util.ArrayList;
 import java.util.List;

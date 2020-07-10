@@ -3,8 +3,6 @@ package ast;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.jscience.mathematics.vector.ComplexMatrix;
-
 import Quantum.Qubit;
 import interp.Environment;
 import javafx.scene.Group;
@@ -13,7 +11,6 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.scene.text.Text;
-import operater.CcnotGateOperator;
 import operater.CnotsGateOperator;
 import util.AmpToBra;
 import util.FindSource;

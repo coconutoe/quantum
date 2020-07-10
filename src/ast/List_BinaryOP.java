@@ -9,6 +9,7 @@ import javafx.scene.shape.Line;
 import operater.BinaryGateOperator;
 import interp.Environment;
 import org.jscience.mathematics.vector.ComplexMatrix;
+
 import util.FindSource;
 import java.util.List;
 
@@ -90,17 +91,6 @@ public class List_BinaryOP extends ASTList {
 		line.setStroke(Color.DARKSEAGREEN);
 		g.getChildren().addAll(circle,line,circle2);
 		circuitpane.getChildren().add(g);
-
-//		outcomepane.getChildren().clear();
-//        if(num == 1){
-//            Text outcome = new Text(10,20,"current state : "+ AmpToBra.translateOpt(q));
-//            outcomepane.getChildren().add(outcome);
-//        }
-//
-//        if( num == 2){
-//            Text outcome = new Text(10,20,"当前的状态的密度矩阵为："+ q.matrix());
-//            outcomepane.getChildren().add(outcome);
-//        }
 
 		env.put("changeDx",changeNum+1);
 	}

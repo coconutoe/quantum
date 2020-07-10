@@ -1,10 +1,6 @@
 package interp;
 
-
 import ast.List_Statements;
-
-import java.io.FileReader;
-
 
 public class Input {
 

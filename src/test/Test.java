@@ -1,46 +1,9 @@
 package test;
 
 import java.util.Arrays;
-import java.util.Deque;
-import java.util.LinkedList;
-import java.util.Queue;
-
 import org.jscience.mathematics.number.Complex;
-import org.jscience.mathematics.vector.ComplexMatrix;
-
-import com.aparapi.Kernel;
-import com.aparapi.Range;
-
-
-import util.ConjugateTranspose;
-import util.UnaryGate;
-
 
 public class Test {
-//	static {
-//		System.loadLibrary("OpenCL64");
-//	}
-    public static final ComplexMatrix U(double a, double b, double c) {
-
-        double temp = b + c;
-        double temp1 = b - c;
-
-
-
-        Complex temp3 = cx(Math.cos(temp/2)/Math.cos(a/2),Math.sin(temp/2)/Math.cos(a/2));
-        return ComplexMatrix.valueOf(new Complex[][]{
-                {cx(Math.cos(a / 2) * Math.cos(temp / -2), Math.cos(a / 2) * Math.sin(temp / -2)),
-                        cx(-Math.sin(a / 2) * Math.cos(temp1 / -2), -Math.sin(a / 2) * Math.sin(temp1 / -2))},
-                {cx(Math.sin(a / 2) * Math.cos(temp1 / 2), Math.sin(a / 2) * Math.sin(temp1 / 2)),
-                        cx(Math.cos(a / 2) * Math.cos(temp / 2), Math.cos(a / 2) * Math.sin(temp / 2))}
-        }).times(temp3);
-
-    }
-
-    private static Complex cx(double real, double imaginary) {
-        return Complex.valueOf(real, imaginary);
-    }
-
     public static  void  main(String[] args){
     	char[] ch = new char[5];
     	Arrays.fill(ch, '0');
@@ -82,35 +45,8 @@ public class Test {
 //    	long start2 = System.currentTimeMillis();
 //    	kernel.execute(range);
 //    	System.out.println(System.currentTimeMillis() - start2);
-    	//new Test().validPalindrome("eeccccbebaeeabebccceea");
-    	new Test().surfaceArea(new int[][] {{2}});
+    	
     }
   
-    public int surfaceArea(int[][] grid) {
-        int res = 0;
 
-        int m = grid.length, n = grid[0].length;
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
-                int t = grid[i][j];
-                res += (t << 2  + (grid[i][j] == 0 ? 0 : 2));
-                if (i > 0) {
-                    res -= Math.min(grid[i][j], grid[i - 1][j]);
-                }
-                if (i < m - 1) {
-                    res -= Math.min(grid[i][j], grid[i + 1][j]);
-                }
-
-                if (j > 0) {
-                    res -= Math.min(grid[i][j], grid[i][j - 1]);
-                }
-
-                if (j < n - 1) {
-                    res -= Math.min(grid[i][j], grid[i][j + 1]);
-                }
-            }
-        }
-
-        return res;
-    }
 }
