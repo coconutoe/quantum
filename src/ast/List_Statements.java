@@ -53,16 +53,16 @@ public class List_Statements extends ASTList {
         
         //最后输出向量
         //long startTime = System.currentTimeMillis();
-//        Qubit q = (Qubit) env.get("QuantumRegisterDX");
-//        outcomepane.getChildren().clear();
-//        if(num == 1){
-//            Text outcome = new Text(10,20,"current state : " + AmpToBra.translate(q.getPossibles()));
-//        	outcomepane.getChildren().add(outcome);
-//        }
-//        if(num == 2){
-//            Text outcome = new Text(10,20,"current state : "+ q.matrix());
-//            outcomepane.getChildren().add(outcome);
-//        }
+        Qubit q = (Qubit) env.get("QuantumRegisterDX");
+        outcomepane.getChildren().clear();
+        if(num == 1){
+            Text outcome = new Text(10,20,"current state : " + AmpToBra.translate(q.getPossibles()));
+        	outcomepane.getChildren().add(outcome);
+        }
+        if(num == 2){
+            Text outcome = new Text(10,20,"current state : "+ q.matrix());
+            outcomepane.getChildren().add(outcome);
+        }
         //long endTime = System.currentTimeMillis();
         //System.out.println(endTime - startTime);
         

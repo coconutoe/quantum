@@ -63,9 +63,11 @@ public class UnaryGateOperater {
         
         MatrixOperation matrixOperation = new MatrixOperation(IlDimension, IrDimension, uGateArr, qsArr);
         
-        
-        matrixOperation.ITensorUTensorI();
-        //matrixOperation.ITensorUTensorIMultiThread();
+        if (quantumBits < 20) {
+        	matrixOperation.ITensorUTensorI();
+        } else {
+        	matrixOperation.ITensorUTensorIMultiThread();
+        }
         
         qs.setPossibles(qsArr);
     }
