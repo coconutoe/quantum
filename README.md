@@ -33,18 +33,20 @@ The list grammer has been used in the QSimulation. We will add some other gramme
 # QSimulation statements
 Statement  | Description 
 :-|:-
-Quantum Identifier INT	| 声明名为Identifier，含有INT位的量子寄存器
-Quantum Identifier INT Explist	| 声明名为Identifier，含有INT位的量子寄存器，并根据Explist初始化量子寄存器
-X\|Y\|Z\|S\|SDG\|T\|TDG Argument	| 内置单量子比特门操作
-U[Explist] Argument	| 单量子参数量子门操作
-CNOT Argument Argument	| 内置双量子比特门操作
-Gate[Explist] Argument	| 自定义量子门操作
-Measure 	| 量子状态的整体测量
-Measure [Argument Identifier ]	| 量子状态的子状态的测量
-Show	| 展示量子寄存器的当前状态
-Reset	| 重置量子寄存器
-Alias Argument, Argument	| 给一个Argument取别名为第二个Argument
-IF Bool Then Statement { ; Statement } FI	| 经典判断语句，根据测量结果，判断是否执行相对应操作
+Quantum Identifier INT	| Declare a quantum register named identifier with INT qubits.
+Quantum Identifier INT Explist	| Declare a quantum register named identifier with INT qubits, and initialize the quantum register according to Explist.
+X\|Y\|Z\|S\|SDG\|T\|TDG Argument	| single-qubit gate operation.
+U[Explist] Argument	| Single quantum gate operation with parameters.
+CNOT Argument Argument	| double-qubits gate operation.
+CCNOT Argument Argument	Argument | triple-qubits gate operation.
+CNOTS Argument Argument... | multi-qubits gate operation.
+Gate[Explist] Argument	| Custom quantum gate operation.
+Measure 	| Global measurement of quantum states.
+Measure [Argument Identifier ]	| Measurement of sub-states of quantum states.
+Show	| Show the current state of the quantum register.
+Reset	| Reset quantum register.
+Alias Argument, Argument	| Alias an argument as the second argument.
+IF Bool Then Statement { ; Statement } FI	| Classical judgment statement. Determine whether to execute the corresponding operation according to the measurement results.
 
 
 # QSimulation Structure
