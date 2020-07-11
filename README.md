@@ -1,6 +1,6 @@
 # Qsimulation V2.0: an Optimized Quantum Simulator
 # Source code
-You can clone the repository quan and it can run in intellij idea, you may need add j-science libaray
+You can clone the repository quantum and it can run in eclipse or intellij idea, you may need to add j-science libaray.
 # QSimulation Grammer
 <pre>
 Program     --------> Declare { ; Statement }
@@ -149,5 +149,19 @@ CNOT q[2] q[0];
 CNOT q[0] q[2]
 </pre>
 
+## Grover algorithm
+<pre>
+Quantum a 4;
+H a[0];H a[1];H a[2];X a[3];H a[3];
+CNOTS a[0] a[1] a[2] a[3];
+H a[0];H a[1];H a[2];X a[0];X a[1];X a[2];H a[2];
+CCNOT a[0] a[1] a[2];
+X a[0];X a[1];H a[2];H a[0];H a[1];X a[2];H a[2];
+CNOTS a[0] a[1] a[2] a[3];
+H a[0];H a[1];H a[2];X a[0];X a[1];X a[2];H a[2];
+CCNOT a[0] a[1] a[2];
+X a[0];X a[1];H a[2];H a[0];H a[1];X a[2];H a[2]
+</pre>
+
 ## others
-In QSimulation_jar file, there is a executable file and some examples.
+In folder examples, there are all the experiments and data of the paper.
