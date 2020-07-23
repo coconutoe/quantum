@@ -6,9 +6,11 @@ You can clone the repository quantum and it can run in eclipse or intellij idea,
 Program     --------> Declare { ; Statement }
 Declare     --------> Quantum Identifier INT [Explist]
 Statement  --------> Operator | Measurement | Show | Alias | IFStatement | Reset
-Operator    --------> UnaryOp | BinaryOp | GateOp | UOp
+Operator    --------> UnaryOp | BinaryOp | MultiOp | GateOp | UOp
 UnaryOp     --------> X|Y|Z|S|SDG|T|TDG Argument
 BinaryOp    --------> CNOT Argument Argument
+TernaryOp    --------> CCNOT Argument Argument Argument
+MultiOp    --------> CNOTS [Argument ]
 GateOp      --------> Gate[Explist] Argument
 UOp         --------> U[Explist] Argument
 Measurement--------> Measure [ Argument Identifier ]
@@ -39,7 +41,7 @@ X\|Y\|Z\|S\|SDG\|T\|TDG Argument	| single-qubit gate operation.
 U[Explist] Argument	| Single quantum gate operation with parameters.
 CNOT Argument Argument	| double-qubits gate operation.
 CCNOT Argument Argument	Argument | triple-qubits gate operation.
-CNOTS Argument Argument... | multi-qubits gate operation.
+CNOTS [Argument ] | multi-qubits gate operation.
 Gate[Explist] Argument	| Custom quantum gate operation.
 Measure 	| Global measurement of quantum states.
 Measure [Argument Identifier ]	| Measurement of sub-states of quantum states.
