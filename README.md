@@ -6,7 +6,7 @@ You can clone the repository quantum and it can run in eclipse or intellij idea,
 Program     --------> Declare { ; Statement }
 Declare     --------> Quantum Identifier INT [Explist]
 Statement  --------> Operator | Measurement | Show | Alias | IFStatement | Reset
-Operator    --------> UnaryOp | BinaryOp | MultiOp | GateOp | UOp
+Operator    --------> UnaryOp | BinaryOp | TernaryOp | MultiOp | GateOp | UOp
 UnaryOp     --------> X|Y|Z|S|SDG|T|TDG Argument
 BinaryOp    --------> CNOT Argument Argument
 TernaryOp    --------> CCNOT Argument Argument Argument
