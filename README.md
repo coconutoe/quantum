@@ -1,7 +1,7 @@
 # Qsimulation V2.0: an Optimized Quantum Simulator
 # Source code
 You can clone the repository quantum and it can run in eclipse or intellij idea, you may need to add j-science libaray.
-# QSimulation Grammer
+# Qsimulation V2.0 Grammer
 <pre>
 Program     --------> Declare { ; Statement }
 Declare     --------> Quantum Identifier INT [Explist]
@@ -32,7 +32,7 @@ Array := [a-zA-Z]*\[INT\]
 
 </pre>
 The list grammer has been used in the QSimulation. We will add some other grammer in the future.
-# QSimulation statements
+# Qsimulation V2.0 statements
 Statement  | Description 
 :-|:-
 Quantum Identifier INT	| Declare a quantum register named identifier with INT qubits.
@@ -51,7 +51,7 @@ Alias Argument, Argument	| Alias an argument as the second argument.
 IF Bool Then Statement { ; Statement } FI	| Classical judgment statement. Determine whether to execute the corresponding operation according to the measurement results.
 
 
-# QSimulation Structure
+# Qsimulation V2.0 Structure
 <img src="images/echo.PNG">
 
 # How to use
