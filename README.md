@@ -7,7 +7,7 @@ Program     --------> Declare { ; Statement }
 Declare     --------> Quantum Identifier INT [Explist]
 Statement  --------> Operator | Measurement | Show | Alias | IFStatement | Reset
 Operator    --------> UnaryOp | BinaryOp | TernaryOp | MultiOp | GateOp | UOp
-UnaryOp     --------> X|Y|Z|S|SDG|T|TDG Argument
+UnaryOp     --------> X|Y|Z|S|SD|T|TD Argument
 BinaryOp    --------> CNOT Argument Argument
 TernaryOp    --------> CCNOT Argument Argument Argument
 MultiOp    --------> CNOTS [Argument ]
@@ -37,7 +37,7 @@ Statement  | Description
 :-|:-
 Quantum Identifier INT	| Declare a quantum register named identifier with INT qubits.
 Quantum Identifier INT Explist	| Declare a quantum register named identifier with INT qubits, and initialize the quantum register according to Explist.
-X\|Y\|Z\|S\|SDG\|T\|TDG Argument	| single-qubit gate operation.
+X\|Y\|Z\|S\|SD\|T\|TD Argument	| single-qubit gate operation.
 U[Explist] Argument	| Single quantum gate operation with parameters.
 CNOT Argument Argument	| double-qubits gate operation.
 CCNOT Argument Argument	Argument | triple-qubits gate operation.
@@ -133,7 +133,7 @@ X q[2];
 H q[0];
 T q[1];
 CNOT q[1] q[0];
-TDG q[0];
+TD q[0];
 CNOT q[1] q[0];
 T q[0];
 U(0,0,PI/8) q[2];
@@ -144,7 +144,7 @@ U(0,0,PI/8) q[0];
 H q[1];
 T q[2];
 CNOT q[2] q[1];
-TDG q[1];
+TD q[1];
 CNOT q[2] q[1];
 T q[1];
 H q[2];
