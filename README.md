@@ -67,7 +67,7 @@ The black box area offers some buttons, which represent different functions.
 
 ### Unary Gates 
 <pre>built-gate(without parameters)
-  X        Y         Z        S     SDT          T           TDG 
+  X        Y         Z        S      SD          T           TD 
 |0 1|   |0  -i|   |1   0|   |1 0|  |1  0|  |1    0     |   |1     0     |
 |1 0|   |i   0|   |0  -1|   |0 i|  |- -i|  |0 exp(iπ/4)|   |0 exp(-iπ/4)|
 
